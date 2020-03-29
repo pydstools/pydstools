@@ -6,6 +6,5 @@ build-backend = "flit_core.buildapi"
 module = "pydstools"
 author = "Juan Manuel Mauricio"
 author-email = "jmmauricio6@gmail.com"
-home-page = "https://personal.us.es/jmmauricio/"
 classifiers = ["License :: OSI Approved :: MIT License"]
 
