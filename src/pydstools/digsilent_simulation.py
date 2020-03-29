@@ -27,8 +27,7 @@ def ds2dict(results_path):
     Example
     -------
                         
-    >>> results_path =  '../examples/gs_test.txt'
-    >>> test_dict = ds2hdf5_1(results_path)        
+      
     
     '''    
     
@@ -99,10 +98,7 @@ def ds_txt_col_2_dict(results_path):
                    
     Example
     -------
-                        
-    >>> results_path =  '../examples/gs_test.txt'
-    >>> test_dict = ds2hdf5_1(results_path)        
-    
+   
     '''    
     
     test_dict =   {'sys':{
@@ -218,8 +214,6 @@ def ds_2_dict(results_path):
     Example
     -------
                         
-    >>> results_path =  '../examples/gs_test.txt'
-    >>> test_dict = ds2hdf5_1(results_path)        
     
     '''     
     
@@ -359,13 +353,13 @@ def ds_2_dict(results_path):
         
     return test_dict
  
-if __name__ == "__main__":
-    import h5py
-    import os
+#if __name__ == "__main__":
+#    import h5py
+#    import os
 #    h_pvs   = h5py.File(hdf5_path,'w')
 #    result_dict = ds_2_dict('/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/benches/cdec_sing_10_14/code/results/Demanda Alta-Escenario 4_2_ANG2.txt')
 #    result_dict = ds_2_dict('/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/abengoa_ssp/errores_govs/200U16w_CC1plena')
 #    result_dict = ds_2_dict('/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/master/pbetancourt/PBetancourt/digsilent/resultados/Caso_3_PUNTA CATALINA 02.txt')
 #    result_dict = ds_2_dict(os.path.join('..','tests','hola.txt'))
-    result_dict = ds_2_dict(r'/home/jmmauricio/Documents/workspace/digsilent/bus12_spc_1_sin.txt')
+#    result_dict = ds_2_dict(r'/home/jmmauricio/Documents/workspace/digsilent/bus12_spc_1_sin.txt')
 #    result_dict = ds_2_dict(r'C:\Users\jmmauricio\hola.txt')

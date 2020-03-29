@@ -40,21 +40,7 @@ def ss_analysis(A):
     
     Example
     -------
-    >>> import numpy as np 
-    >>> from small_signal import ss_analysis  
-    
-    Linelized system from Kundur's book example 13.2 
-    
-    >>> A=np.array(
-               [[  -1.489,   -0.179,   -0.092,   -0.94 ,   -0.   ,    0.231,    2.5  ],
-                [  -0.064,   -2.929,   -0.056,    1.529,    0.   ,    0.079,    0.   ],
-                [  29.55 ,    0.   ,  -36.64 ,    0.   ,    0.   ,   -5.983,    0.   ],
-                [   0.   ,   12.66 ,   -0.   ,  -22.79 ,    0.   ,    3.191,    0.   ],
-                [  -0.091,    0.01 ,   -0.08 ,    0.054,   -0.127,   -0.158,    0.   ],
-                [   0.   ,    0.   ,    0.   ,    0.   ,  377.   ,    0.   ,    0.   ],
-                [   0.   ,    0.   ,    0.   ,    0.   ,    0.   ,    0.   ,   -1.   ]]
-                )
-    >>> w,v_right,v_left,pf= ss_analysis(A)
+
 
     '''
 
@@ -140,31 +126,7 @@ def plot_pf_mode(w,pf, mode, states_dict, width = 0.5):
     
     Example
     -------
-    >>> import numpy as np 
-    >>> from small_signal import ss_analysis, plot_pf_mode  
     
-    Linelized system from Kundur's book example 13.2 
-    
-    >>> A=np.array(
-               [[  -1.489,   -0.179,   -0.092,   -0.94 ,   -0.   ,    0.231,    2.5  ],
-                [  -0.064,   -2.929,   -0.056,    1.529,    0.   ,    0.079,    0.   ],
-                [  29.55 ,    0.   ,  -36.64 ,    0.   ,    0.   ,   -5.983,    0.   ],
-                [   0.   ,   12.66 ,   -0.   ,  -22.79 ,    0.   ,    3.191,    0.   ],
-                [  -0.091,    0.01 ,   -0.08 ,    0.054,   -0.127,   -0.158,    0.   ],
-                [   0.   ,    0.   ,    0.   ,    0.   ,  377.   ,    0.   ,    0.   ],
-                [   0.   ,    0.   ,    0.   ,    0.   ,    0.   ,    0.   ,   -1.   ]]
-                )
-    >>> w,v_right,v_left,pf= ss_analysis(A)
-    >>> states_dict = {'e_1_q':{'number':1, 'tex':"$e'_q$"},
-                       'e_1_d':{'number':2, 'tex':"$e'_d$"},
-                       'psi_k_d':{'number':3, 'tex':r'$\psi kd$'},
-                       'psi_k_q':{'number':4, 'tex':r'$\psi kq$'},
-                       'omega':{'number':5, 'tex':r"$\omega$"},
-                       'delta':{'number':6, 'tex':r"$\delta$"}}
-        
-    >>> mode = 3
-    >>> fig = plot_pf_mode(w,pf, mode, states_dict, width = 0.5)
-    >>> fig.show() 
     '''
     
     import matplotlib.pyplot as plt
@@ -434,43 +396,43 @@ def read_psse_abcd(mlis_file):
  
  
  
-if __name__ == '__main__':
+# if __name__ == '__main__':
     
-    mlis_file = '/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/benches/ieee_12_generic/code/ieee12g_pvsync_base/results/ieee12g_base_small_signal.dat'
-    A,B,C,D,states_dict = read_psse_abcd(mlis_file)    
-    w,v_right,v_left,pf = ss_analysis(A)
-    reales= list(np.around(w.real, decimals=2))
-    imaginarios= list(np.around(w.imag, decimals=2))
+#     mlis_file = '/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/benches/ieee_12_generic/code/ieee12g_pvsync_base/results/ieee12g_base_small_signal.dat'
+#     A,B,C,D,states_dict = read_psse_abcd(mlis_file)    
+#     w,v_right,v_left,pf = ss_analysis(A)
+#     reales= list(np.around(w.real, decimals=2))
+#     imaginarios= list(np.around(w.imag, decimals=2))
 
      
-#    mlis_file = '/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/benches/ieee_12_generic/code/ieee12g_pvsync_10/results/ieee12g_10_pvs_small_signal.dat'
-#    A,B,C,D,states_dict = read_psse_abcd(mlis_file)    
-#    w,v_right,v_left,pf = ss_analysis(A)
-#    reales= list(np.around(w.real, decimals=2))
-#    imaginarios= list(np.around(w.imag, decimals=2))
+# #    mlis_file = '/home/jmmauricio/Documents/public/jmmauricio6/RESEARCH/benches/ieee_12_generic/code/ieee12g_pvsync_10/results/ieee12g_10_pvs_small_signal.dat'
+# #    A,B,C,D,states_dict = read_psse_abcd(mlis_file)    
+# #    w,v_right,v_left,pf = ss_analysis(A)
+# #    reales= list(np.around(w.real, decimals=2))
+# #    imaginarios= list(np.around(w.imag, decimals=2))
 
-#    A=np.array(
-#               [[  -1.489,   -0.179,   -0.092,   -0.94 ,   -0.   ,    0.231,    2.5  ],
-#                [  -0.064,   -2.929,   -0.056,    1.529,    0.   ,    0.079,    0.   ],
-#                [  29.55 ,    0.   ,  -36.64 ,    0.   ,    0.   ,   -5.983,    0.   ],
-#                [   0.   ,   12.66 ,   -0.   ,  -22.79 ,    0.   ,    3.191,    0.   ],
-#                [  -0.091,    0.01 ,   -0.08 ,    0.054,   -0.127,   -0.158,    0.   ],
-#                [   0.   ,    0.   ,    0.   ,    0.   ,  377.   ,    0.   ,    0.   ],
-#                [   0.   ,    0.   ,    0.   ,    0.   ,    0.   ,    0.   ,   -1.   ]]
-#                )
-#    w,v_right,v_left,pf= ss_analysis(A)
-#    
-#    states_dict = {'e_1_q':{'number':1, 'tex':"$e'_q$"},
-#                   'e_1_d':{'number':2, 'tex':"$e'_d$"},
-#                   'psi_k_d':{'number':3, 'tex':r'$\psi kd$'},
-#                   'psi_k_q':{'number':4, 'tex':r'$\psi kq$'},
-#                   'omega':{'number':5, 'tex':r"$\omega$"},
-#                   'delta':{'number':6, 'tex':r"$\delta$"}}
-#             
-#    mode = 3         
-#    fig = plot_pf_mode(w,pf, mode, states_dict, width = 0.5)
-#    fig.show()
-#    print pf
-#    w,damp, freq, str_out = compute_damp(A)
-#    print str_out
+# #    A=np.array(
+# #               [[  -1.489,   -0.179,   -0.092,   -0.94 ,   -0.   ,    0.231,    2.5  ],
+# #                [  -0.064,   -2.929,   -0.056,    1.529,    0.   ,    0.079,    0.   ],
+# #                [  29.55 ,    0.   ,  -36.64 ,    0.   ,    0.   ,   -5.983,    0.   ],
+# #                [   0.   ,   12.66 ,   -0.   ,  -22.79 ,    0.   ,    3.191,    0.   ],
+# #                [  -0.091,    0.01 ,   -0.08 ,    0.054,   -0.127,   -0.158,    0.   ],
+# #                [   0.   ,    0.   ,    0.   ,    0.   ,  377.   ,    0.   ,    0.   ],
+# #                [   0.   ,    0.   ,    0.   ,    0.   ,    0.   ,    0.   ,   -1.   ]]
+# #                )
+# #    w,v_right,v_left,pf= ss_analysis(A)
+# #    
+# #    states_dict = {'e_1_q':{'number':1, 'tex':"$e'_q$"},
+# #                   'e_1_d':{'number':2, 'tex':"$e'_d$"},
+# #                   'psi_k_d':{'number':3, 'tex':r'$\psi kd$'},
+# #                   'psi_k_q':{'number':4, 'tex':r'$\psi kq$'},
+# #                   'omega':{'number':5, 'tex':r"$\omega$"},
+# #                   'delta':{'number':6, 'tex':r"$\delta$"}}
+# #             
+# #    mode = 3         
+# #    fig = plot_pf_mode(w,pf, mode, states_dict, width = 0.5)
+# #    fig.show()
+# #    print pf
+# #    w,damp, freq, str_out = compute_damp(A)
+# #    print str_out
     
